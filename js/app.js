@@ -1,82 +1,40 @@
-/**
- *
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- *
- * Dependencies: None
- *
- * JS Version: ES2015/ES6
- *
- * JS Standard: ESlint
- *
- */
+//Navigation Global Variable
+const myNav = document.getElementById('navbar__list');
 
-/**
- * Define Global Variables
- *
- */
-const navBarList = document.querySelector("#navbar__list");
-const sections = document.querySelectorAll("section");
-/**
- */
+//Section Global Variable
+const mySection = document.querySelectorAll('section');
 
-// build the nav
+//Build Navbar
+const buildNav = () => {
 
+    let navUI = '';
+    mySection.forEach(section => {
 
+        const ID = section.id;
+        const navData = section.dataset.nav
 
+        navUI += `<li><a class= "menu__link" href="#${ID}">${navData}</a></li>`;
 
-
-
-function myNavBar() {
-  const navBar = document.querySelector("#navbar__list");
-  const fragment = document.createDocumentFragment();
-
-  link.forEach(myNav);
-  function myNav(section) {
-    const newNav = setLinks(section);
-    newNav.addEventListener("click", function () {
-      scrollToSection(section.sectionId);
     });
-    fragment.appendChild(myNav);
+
+    myNav.innerHTML = navUI;
+};
+
+buildNav();
+
+//Slideshow
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
   }
-  navBar.appendChild(fragment);
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
 }
-
-function setLinks(section) {
-  const navLinks = document.createElement("li");
-  navLinks.setAttribute("id", section.menuId);
-  if (links[0] === "Home") {
-    newNav.textContent = "Home";
-  } else {
-    newNav.textContent = section.sectionId;
-  }
-  return newNav;
-}
-
-function scrollToSection(id) {
-  const element = document.getElementById(id);
-  console.log(element.offsetTop);
-  window.scrollTo({
-    top: element.offsetTop,
-    left: 0,
-    behavior: "smooth",
-  });
-}
-
-// Add class 'active' to section when near top of viewport
-
-// Scroll to anchor ID using scrollTO event
-
-/**
- * End Main Functions
- * Begin Events
- *
- */
-
-// Build menu
-
-// Scroll to section on link click
-
-// Set sections as active
