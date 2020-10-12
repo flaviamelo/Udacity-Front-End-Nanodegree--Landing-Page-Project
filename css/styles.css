@@ -1,5 +1,4 @@
 /*General Rules*/
-
 body {
   background: rgb(223, 167, 176);
   background-image: linear-gradient(white, rgb(223, 167, 176));*/
@@ -17,14 +16,8 @@ body {
     "ft";
 }
 
-h1 {
-  font-size: 5em;
-  text-align: center;
-}
 
-h1 span {
-  color: rgb(184, 36, 134);
-}
+/* Header Styles */
 
 .page__header {
   width: 100%;
@@ -47,38 +40,6 @@ h1 span {
 
 .navbar__menu {
   width: 50%;
-}
-
-h2 {
-  border-bottom: 1px solid rgb(184, 36, 134);
-  font-size: 3em;
-  color: rgb(105, 11, 11);
-}
-
-p {
-  line-height: 1.6em;
-  color: rgb(105, 11, 11);
-}
-
-main {
-  display: block;
-  grid-area: main;
-  margin-bottom: 200px;
-}
-
-.mySlides {
-  display: none;
-  width: 100%;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-section {
-  position: relative;
-  min-height: 80vh;
-  margin-right: 30px;
-  margin-left: 30px;
 }
 
 .navbar__menu ul {
@@ -104,24 +65,40 @@ section {
   transition: ease 0.5s all;
 }
 
-/* Header Styles */
 
-.page__header {
-  background: #fff;
-  /*position: fixed;*/
-  top: 0;
-  width: 100%;
-  z-index: 5;
+/* Main Styles */
+
+main {
+  display: block;
+  grid-area: main;
+  margin-bottom: 200px;
 }
 
-.page__footer {
-  color: #fff;
+h1 {
+  font-size: 5em;
   text-align: center;
-  grid-area: ft;
 }
 
-.page__footer p {
-  color: #fff;
+h1 span {
+  color: rgb(184, 36, 134);
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Sections Styles*/
+
+section {
+  position: relative;
+  min-height: 80vh;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .landing__container {
@@ -133,6 +110,17 @@ section:nth-of-type(even) .landing__container {
   margin-right: 0;
   margin-left: auto;
   text-align: right;
+}
+
+h2 {
+  border-bottom: 1px solid rgb(184, 36, 134);
+  font-size: 3em;
+  color: rgb(105, 11, 11);
+}
+
+p {
+  line-height: 1.6em;
+  color: rgb(105, 11, 11);
 }
 
 #box {
@@ -155,6 +143,22 @@ section:nth-of-type(even) .landing__container {
 width: 80px;
 height: 80px;
 }
+
+
+/* Footer Styles */
+
+.page__footer {
+  color: #fff;
+  text-align: center;
+  grid-area: ft;
+}
+
+.page__footer p {
+  color: #fff;
+}
+
+
+
 @media only screen and (max-width: 1050px) {
 
 #navbar__list {
@@ -169,4 +173,3 @@ h1 {
 }
 
 }
-
