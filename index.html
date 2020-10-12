@@ -21,43 +21,50 @@
     </header>
 
     <main>
-        <h1>Pet Maison</h1>
+        <h1>Welcome to <span>Pet Maison</span>!</h1>
         <div class="slideshow"></div>
            <img class="mySlides" src="images/dogs.jpg" alt="dogspic">
-           <img class="mySlides" src="images/cat.jpg" alt="catspic">
+           <img class="mySlides" src="images/dog3.jpg" alt="catspic">
            <img class="mySlides" src="images/dog2.jpg" alt="dogspic">
         </div>
         <section id="section1" data-nav="About" class="your-active-class">
             <div class="landing__container">
                 <h2>About</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci
-                    eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam
-                    in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
+                <p>With over 15 years of experience, your best friend is in safe hands with our team of professional groomers. We provide a safe and relaxed environment that means an enjoyable and stress-free experience for you and your dog. We want your pet to have a good time with us and always be happy to come back. </p>
 
-                <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet
-                    porttitor tortor, eget elementum tortor mollis non.</p>
+                <p>Our second priority is for your pet to leave Pet Maison looking his or her best. We specialize in quality hand-scissored grooming and always give your pet the time it takes for the best hair-do possible. All of our groomers are trained in the art of pet styling. Whether you are looking for a simple, short haircut or a fancy, elaborate style, our groomers are qualified.</p>
+
+                <p>Choose a date and time that works best for you and your pup, and book your visit below!</p>
             </div>
         </section>
         <section id="section2" data-nav="Services">
             <div class="landing__container">
                 <h2>Services</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci
-                    eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam
-                    in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
-
-                <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet
-                    porttitor tortor, eget elementum tortor mollis non.</p>
+                <h3>Basic Bath & Brush</h3>
+                <p>Includes bath, blow (or fan) dry, brush/comb, ear cleaning, hygiene trim, paws & pad shaving and clean up around the eyes. Just enough to make a full groom last a little longer and help prevent matting until the next full groom.</p>
+                <h3>Full Groom</h3>
+                <p>AIncludes bath, blow (or fan) dry, brush/comb, ear cleaning, hygiene trim, paws & pad shaving, a complete shave or scissor cut along with a sanitary trim and a spritz of cologne. </p>
             </div>
         </section>
         <section id="section3" data-nav="Appointement">
             <div class="landing__container">
                 <h2>Appointement</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci
-                    eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam
-                    in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
-
-                <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet
-                    porttitor tortor, eget elementum tortor mollis non.</p>
+                <p>Pet's Name: <input type="text" name="txt-name" id="box"></p>
+                <p>Email*: <input type="email" name="txt-email" id="box"></p>
+                <p>Phone*: <input type="tel" name="number" id="box"></p>
+                <p>Date: <input type="date" name="date" id="box"></p>
+                <p>Time: <input type="time" name="date" id="box"> We open from 9am to 8pm.</p>
+                <p>
+                  <label for="service">Choose your service: </label>
+                  <select name="services" id="box">
+                    <option value="">--Please choose an option--</option>
+                    <option value="basic">Basic Bath & Brush</option>
+                    <option value="full">Full Groom</option>
+                  </select>
+                </p>
+                <p>
+                  <button class="btn" type="submit">Request</button>
+                </p>
             </div>
         </section>
         <section id="section4" data-nav="Contact">
