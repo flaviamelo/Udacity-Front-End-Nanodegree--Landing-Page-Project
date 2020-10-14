@@ -70,10 +70,13 @@ body {
   border-radius: 5px;
 }
 
-.active {
-  background-color: rgb(223, 167, 176);
+
+a.your-active-class {
+  background: rgb(223, 167, 176);
+  background: linear-gradient(0deg, rgb(223, 167, 176); 0%, rgb(223, 167, 176); 100%);
   border-radius: 5px;
-  }
+}
+
 
 
 /* Main Styles */
@@ -81,7 +84,7 @@ body {
 main {
   display: block;
   grid-area: main;
-  margin-top: 100px;
+  margin-top: -450px;
   margin-bottom: 200px;
 }
 
@@ -156,23 +159,12 @@ width: 80px;
 height: 80px;
 }
 
-section.your-active-class {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+.your-active-class .landing__container {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.your-active-class .landing__container::before {
-  opacity: 1;
-  animation: rotate 4s linear 0s infinite forwards;
-}
-
-section.your-active-class .landing__container::after {
-  opacity: 1;
-  animation: rotate 5s linear 0s infinite forwards reverse;
-}
-
-.focus h2{
-  font-size: 4em;
-  color: rgb(184, 36, 134);
+section.your-active-class h2 {
+  text-shadow: 2px 2px 5px rgb(184, 36, 134);
 }
 
 #topButton {
@@ -191,7 +183,6 @@ section.your-active-class .landing__container::after {
 }
 
 
-
 /* Footer Styles */
 
 .page__footer {
@@ -208,12 +199,26 @@ section.your-active-class .landing__container::after {
 
 @media only screen and (max-width: 1050px) {
 
+
+.page__header {
+  height: 180px;
+  background-color: #fff;
+} 
+
 #navbar__list {
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: space-around;
+  z-index: 99;
+  
 }
+
+main {
+margin-top: -350px;
+}
+
 h1 {
   font-size: 3em;
   text-align: center;

@@ -5,8 +5,8 @@ const myNav = document.getElementById('navbar__list');
 //Section Global Variable
 const mySections = document.querySelectorAll('section');
 
-
 //Build Navbar
+
 function buildNav() {
   const fragment = document.createDocumentFragment();
 
@@ -16,7 +16,7 @@ function buildNav() {
       a.innerText = mySection.getAttribute('data-nav');
       a.setAttribute('class', 'menu__link');
       
-      // scroll to anchor ID using scroll to event
+      //Scroll to Sections
       a.addEventListener("click", () => {
           mySection.scrollIntoView({block: 'end', behavior: "smooth"});
           });
@@ -25,51 +25,46 @@ function buildNav() {
   });
   myNav.appendChild(fragment);
 };
+
+function getVisibleSectionIndex() {
+  let minor = window.innerHeight;
+  visibleSectionIndex = -1;
+
+  mySections.forEach((mySection, index) => {
+      let offset = mySection.getBoundingClientRect();
+      if(Math.abs(offset.top) < minor){
+          minor = Math.abs(offset.top);
+          visibleSectionIndex = index;
+      }
+  });
+  return visibleSectionIndex;
+}
+
+function setActiveSection(){
+  visibleSectionIndex = getVisibleSectionIndex();
+
+  // If visibleSection exists
+  if(visibleSectionIndex != -1){
+      //List of a(tag)
+      let navATagList = document.querySelectorAll('.menu__link');
+      for (let i = 0; i < mySections.length; i++) {
+          // Active State
+          if (i == visibleSectionIndex){
+              mySections[i].classList.add('your-active-class');
+              navATagList[i].classList.add('your-active-class');
+          }
+          else{
+              mySections[i].classList.remove('your-active-class');
+              navATagList[i].classList.remove('your-active-class');
+          }
+      }; 
+  };
+}
+
+
 buildNav();
 
-
-/*//Active Page Link Button Highlight
-$(document).ready(function(){
-  $('ul li a').click(function(){
-    $('li a').removeClass("active");
-    $(this).addClass("active");
-  })
-})*/
-
-
-// Active States
-const offset = (section) => {
-  return Math.floor(section.getBoundingClientRect().top);
-};
-const clearActive = (section) => {
-  section.classList.remove('your-active-class');
-  section.classList.remove('focus');
-};
-const insertActive = (conditional, section) => {
-  if (conditional) {
-      section.classList.add('your-active-class');
-      section.classList.add('focus'); 
-  };
-};
-const activeSection = () => {
-  mySections.forEach(section => {
-      const elementOffset = offset(section);
-
-      inviewport = () => elementOffset < 180 && elementOffset >= -180;
-
-      clearActive(section);
-      insertActive(inviewport(), section);
-
-      $(document).ready(function(section){
-        $('ul li a').click(function(){
-          $('li a').removeClass("active");
-          $(this).addClass("active");
-        })
-      })
-
-  });
-};
-window.addEventListener('scroll', activeSection);
+document.addEventListener('scroll', setActiveSection);
 
 
 //Slideshow
@@ -105,7 +100,6 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
 
 
 
