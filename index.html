@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Manipulating the DOM</title>
+    <title>Pet Maison</title>
     <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="page__header">
-            <div class="navbar__logo"></div>
-            <nav class="navbar__menu">
-                <!-- Navigation starts as empty UL that will be populated with JS -->
-                <ul id="navbar__list"></ul>
-            </nav>
-        </header>
+        <section data-nav="Home">
+            <header class="page__header" id="navbar">
+                <div class="navbar__logo"></div>
+                <nav class="navbar__menu">
+                        <!-- Navigation starts as empty UL that will be populated with JS -->
+                    <ul id="navbar__list"></ul>
+                </nav>
+            </header>
+        </section>
         <main>
             <h1>Welcome to <span>Pet Maison</span>!</h1>
             <div class="slideshow"></div>
@@ -78,6 +80,7 @@
             <p>&copy Made by Flavia Barreto</p>
         </footer>
   </div>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
 </body>
 

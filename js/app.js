@@ -1,35 +1,50 @@
+
 //Navigation Global Variable
 const myNav = document.getElementById('navbar__list');
 
 //Section Global Variable
-const mySection = document.querySelectorAll('section');
+const mySections = document.querySelectorAll('section');
+
 
 //Build Navbar
-const buildNav = () => {
+function buildNav() {
+  const fragment = document.createDocumentFragment();
 
-    let navUI = '';
-    mySection.forEach(section => {
-
-        const ID = section.id;
-        const navData = section.dataset.nav
-
-        navUI += `<li><a class= "menu__link" href="#${ID}">${navData}</a></li>`;
-
-    });
-
-    myNav.innerHTML = navUI;
+  mySections.forEach((mySection) => {
+      let li = document.createElement('li');
+      let a = document.createElement('a');
+      a.innerText = mySection.getAttribute('data-nav');
+      a.setAttribute('class', 'menu__link');
+      
+      // scroll to anchor ID using scroll to event
+      a.addEventListener("click", () => {
+          mySection.scrollIntoView({block: 'end', behavior: "smooth"});
+          });
+      li.appendChild(a);
+      fragment.appendChild(li);
+  });
+  myNav.appendChild(fragment);
 };
 
 buildNav();
 
-//Slideshow
 
-var myIndex = 0;
+//Active Page Link Button Highlight
+$(document).ready(function(){
+  $('ul li a').click(function(){
+    $('li a').removeClass("active");
+    $(this).addClass("active");
+  })
+})
+
+
+//Slideshow
+let myIndex = 0;
 slideShow();
 
 function slideShow() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
+  let i;
+  let x = document.getElementsByClassName("mySlides");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";  
   }
